@@ -23,8 +23,16 @@
 
 axios.get('https://lambda-times-api.herokuapp.com/articles')
     .then(res => {
-        // console.log(res)
-        singleArticle(res)
+        let articles = res.data.articles;
+
+        for(const key in articles){
+            // console.log(key)
+            // console.log(articles[key])
+            articles[key].forEach((article) =>{
+                // console.log(article)
+                document.querySelector('.cards-container').append(singleArticle(article))
+            })
+        }
     })
     .catch(err => {
         console.log(err)
@@ -33,17 +41,37 @@ axios.get('https://lambda-times-api.herokuapp.com/articles')
 
 
 function singleArticle(articleObject){
-    let articles = articleObject.data.articles;
+    
+    // console.log(articleObject)
+
+    const cardDiv = document.createElement('div')
+    cardDiv.classList.add('card')
+    cardDiv.addEventListener('click', (e) => console.log(e.target.innerText))
+    
+    const headLine = document.createElement('div')
+    headLine.classList.add('headline')
+    headLine.innerText = articleObject.headline
+    cardDiv.append(headLine)
+
+    const author = document.createElement('div')
+    author.classList.add('author');
+    cardDiv.append(author)
+
+    const imageContainer = document.createElement('div')
+    imageContainer.classList.add('img-container')
+    author.append(imageContainer)
+
+    const imageAuthor = document.createElement('img')
+    imageAuthor.setAttribute('src', `${articleObject.authorPhoto}`)
+    imageContainer.append(imageAuthor)
+
+    const authorName = document.createElement('span')
+    authorName.innerText = `by ${articleObject.authorName}`
+    author.append(authorName)
 
 
-    for(const key in articles){
-        // console.log(key)
-        // console.log(articles[key])
-        sArticle(key,articles[key])
-    }
 
-}
 
-function sArticle(article, articles){
-    console.log(article, articles)
+    return cardDiv
+
 }
