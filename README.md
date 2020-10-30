@@ -27,14 +27,15 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
-
+    The dom is preety much the document object model of your "machine" "website" that you can access using javascript
 2. What is an event?
-
+    An event is baiscailly any user interaction between an element or the web page
 3. What is an event listener?
-
+    Even listener is a function that receives a callback function and event that can listen to any changes on the web page done by the user
 4. Why would we convert a NodeList into an Array?
-
+    You would wanna conver so then you can use array methods because you cant do most of them with a node list
 5. What is a component?
+    a component is an indiviual function or item that is part of your website , like we made today header component is a seperate file that fits into our website
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -66,9 +67,9 @@ Your finished project must include all of the following requirements:
 
 - [x] Following the instructions in the `components/Header.js` file, create the Header.
 
-- [ ] Following the instructions in the `components/Tabs.js` file, create the Tabs.
+- [x] Following the instructions in the `components/Tabs.js` file, create the Tabs.
 
-- [ ] Following the instructions in the `components/Cards.js` file, create the Cards.
+- [x] Following the instructions in the `components/Cards.js` file, create the Cards.
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
