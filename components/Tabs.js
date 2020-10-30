@@ -21,7 +21,7 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
             getTitle.append(div)
     
         })
-        console.log(res)
+        // console.log(res)
         
     })
     .catch(drama =>{
